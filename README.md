@@ -1,4 +1,4 @@
-# VMware SNMP ESXi 5.1
+# Template VMware SNMP ESXi 5.1 para Zabbix 6
 
 <img src="https://assets.zabbix.com/img/tmp/logo/logo_bad_example.png" alt="logo">
 
