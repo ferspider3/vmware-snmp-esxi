@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>6.0</version>
+    <date>2021-12-20T13:33:00Z</date>
+    <groups>
+        <group>
+            <uuid>a571c0d144b14fd4a87a9d9b2aa9fcd6</uuid>
+            <name>Templates/Applications</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <uuid>deebe6bb366e49808f844a7e56c32f84</uuid>
+            <template>VMware SNMP ESXi</template>
+            <name>VMware SNMP ESXi</name>
+            <templates>
+                <template>
+                    <name>ICMP Ping</name>
+                </template>
+                <template>
+                    <name>Interfaces SNMP</name>
+                </template>
+            </templates>
+            <groups>
+                <group>
+                    <name>Templates/Applications</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <uuid>a08471f5d3c748c39251611658c0a40a</uuid>
+                    <name>Sistema - Modelo</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.2.1.47.1.1.1.1.2.1</snmp_oid>
+                    <key>entPhysicalDescr</key>
+                    <tags>
+                        <tag>
+                            <tag>Aplicação</tag>
+                            <value>Sistema</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>4a066a68c5ca4171b8e4736fccb80ebb</uuid>
+                    <name>Sistema - Fabricante</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.2.1.47.1.1.1.1.12.1</snmp_oid>
+                    <key>entPhysicalMfgName</key>
+                    <tags>
+                        <tag>
+                            <tag>Aplicação</tag>
+                            <value>Sistema</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>6fa70c6231d14c5b8abc2a267b143d92</uuid>
+                    <name>Sistema - Número de Série</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.2.1.47.1.1.1.1.11.1</snmp_oid>
+                    <key>entPhysicalSerialNum</key>
+                    <tags>
+                        <tag>
+                            <tag>Aplicação</tag>
+                            <value>Sistema</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>f23d22ff307142a18c0c9deaae610d4c</uuid>
+                    <name>Sistema - Descrição</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.2.1.1.1.0</snmp_oid>
+                    <key>sysDescr.0</key>
+                    <description>Uma descrição textual da entidade. Este valor deve inclua o nome completo e a identificação da versão de o tipo de hardware do sistema, sistema operacional de software, e software de rede.</description>
+                    <tags>
+                        <tag>
+                            <tag>Aplicação</tag>
+                            <value>Sistema</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>40ca6e6a4aa5455b9dd0acf3f633b635</uuid>
+                    <name>Sistema - Nome do Dispositivo</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>SNMPv2-MIB::sysName.0</snmp_oid>
+                    <key>sysName</key>
+                    <description>Um nome atribuído administrativamente para este nó gerenciado. Por convenção, este é o nome de domínio totalmente qualificado do nó. Se o nome for desconhecido, o valor será a string de comprimento zero.</description>
+                    <tags>
+                        <tag>
+                            <tag>Aplicação</tag>
+                            <value>Sistema</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>4697316cee6c4d13bb89155dbb95e32c</uuid>
+                    <name>Sistema - Tempo de atividade do dispositivo</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.2.1.25.1.1.0</snmp_oid>
+                    <key>sysUpTime</key>
+                    <units>uptime</units>
+                    <description>O tempo desde a última reinicialização da parte de gerenciamento de rede do sistema. SNMPv2-MIB::sysUpTime.0</description>
+                    <tags>
+                        <tag>
+                            <tag>Aplicação</tag>
+                            <value>Sistema</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>fb47d5357c904271907f051a3ef80a85</uuid>
+                    <name>Sistema - Build do WMware</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.6876.1.4.0</snmp_oid>
+                    <key>vmwProdBuild.0</key>
+                    <tags>
+                        <tag>
+                            <tag>Aplicação</tag>
+                            <value>Sistema</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>95bdad767be4470db6e73f40ada5810d</uuid>
+                    <name>Sistema - Versão do ESXi</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.6876.1.2.0</snmp_oid>
+                    <key>vmwProdVersion.0</key>
+                    <tags>
+                        <tag>
+                            <tag>Aplicação</tag>
+                            <value>Sistema</value>
+                        </tag>
+                    </tags>
+                </item>
+            </items>
+            <discovery_rules>
+                <discovery_rule>
+                    <uuid>7aaddba8786346379cf7a207cb7486bf</uuid>
+                    <name>Hardware</name>
+                    <type>SSH</type>
+                    <key>ssh.run[esxcli,{$SSH_IP},{$SSH_PORT}]</key>
+                    <params>esxcli hardware</params>
+                    <username>{$SSH_USER}</username>
+                    <password>{$SSH_PASS}</password>
+                    <item_prototypes>
+                        <item_prototype>
+                            <uuid>e4b8f7a715b44ef39f998604f01d1133</uuid>
+                            <name>Hardware - CPU</name>
+                            <type>SSH</type>
+                            <key>ssh.run[esxcli hardware cpu,{$SSH_IP},{$SSH_PORT}]</key>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <params>esxcli hardware cpu global get</params>
+                            <username>{$SSH_USER}</username>
+                            <password>{$SSH_PASS}</password>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Hardware</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>aa1696650b5f481ba63f1640e3accc48</uuid>
+                            <name>Hardware - Memória</name>
+                            <type>SSH</type>
+                            <key>ssh.run[esxcli hardware memory,{$SSH_IP},{$SSH_PORT}]</key>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <params>esxcli hardware cpu memory get</params>
+                            <username>{$SSH_USER}</username>
+                            <password>{$SSH_PASS}</password>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Hardware</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>72807dd5f4234b968bc119c2368cf681</uuid>
+                            <name>Hardware - Plataforma</name>
+                            <type>SSH</type>
+                            <key>ssh.run[esxcli hardware platform,{$SSH_IP},{$SSH_PORT}]</key>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <params>esxcli hardware cpu platform get</params>
+                            <username>{$SSH_USER}</username>
+                            <password>{$SSH_PASS}</password>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Hardware</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                    </item_prototypes>
+                </discovery_rule>
+                <discovery_rule>
+                    <uuid>8a6edb22bc404267809713b344db57ea</uuid>
+                    <name>Descoberta do sistema de arquivos</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>discovery[{#FSNAME},1.3.6.1.2.1.25.2.3.1.3,{#FSTYPE},1.3.6.1.2.1.25.2.3.1.2,{#ALLOC_UNITS},1.3.6.1.2.1.25.2.3.1.4]</snmp_oid>
+                    <key>vfs.fs.discovery[snmp]</key>
+                    <filter>
+                        <evaltype>AND</evaltype>
+                        <conditions>
+                            <condition>
+                                <macro>{#FSNAME}</macro>
+                                <value>{$VFS.FS.FSNAME.MATCHES}</value>
+                                <formulaid>A</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#FSNAME}</macro>
+                                <value>{$VFS.FS.FSNAME.NOT_MATCHES}</value>
+                                <operator>NOT_MATCHES_REGEX</operator>
+                                <formulaid>B</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#FSTYPE}</macro>
+                                <value>{$VFS.FS.FSTYPE.MATCHES}</value>
+                                <formulaid>C</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#FSTYPE}</macro>
+                                <value>{$VFS.FS.FSTYPE.NOT_MATCHES}</value>
+                                <operator>NOT_MATCHES_REGEX</operator>
+                                <formulaid>D</formulaid>
+                            </condition>
+                        </conditions>
+                    </filter>
+                    <description>HOST-RESOURCES-MIB :: descoberta hrStorage com filtro de armazenamento</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <uuid>b6cde919b07b40b18ac576d331702090</uuid>
+                            <name>{#FSNAME}: Falhas de alocação</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.2.1.25.2.3.1.7.{#SNMPINDEX}</snmp_oid>
+                            <key>vfs.fs.allocationfaill[hrStorageAllocationFailures.{#SNMPINDEX}]</key>
+                            <units>B</units>
+                            <description>MIB: HOST-RESOURCES-MIB
+O número de solicitações de armazenamento representado por
+esta entrada que não pôde ser homenageada por não ser suficiente
+armazenar. Deve-se notar que, como este objeto tem um
+SINTAXE do Counter32, que não possui um
+valor inicial. No entanto, é recomendado que este
+objeto ser inicializado para zero, embora o gerenciamento
+as estações não devem depender dessa inicialização.</description>
+                            <preprocessing>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <parameters>
+                                        <parameter>{#ALLOC_UNITS}</parameter>
+                                    </parameters>
+                                </step>
+                            </preprocessing>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Sistema de arquivos {#FSNAME}</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>58acace14a6346c19c07a8655a650709</uuid>
+                            <name>{#FSNAME}: Utilização do espaço</name>
+                            <type>CALCULATED</type>
+                            <key>vfs.fs.pused[storageUsedPercentage.{#SNMPINDEX}]</key>
+                            <units>%</units>
+                            <params>(last(//vfs.fs.used[hrStorageUsed.{#SNMPINDEX}])/last(//vfs.fs.total[hrStorageSize.{#SNMPINDEX}]))*100</params>
+                            <description>Utilização do espaço em % para {#FSNAME}</description>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Sistema de arquivos {#FSNAME}</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>c77034212cfa405db60c38857cc3f395</uuid>
+                            <name>{#FSNAME}: Índice de Armazenamento</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.2.1.25.2.3.1.1.{#SNMPINDEX}</snmp_oid>
+                            <key>vfs.fs.total[hrhrStorageIndex.{#SNMPINDEX}]</key>
+                            <units>B</units>
+                            <description>MIB: HOST-RESOURCES-MIB
+Um valor único para cada área de armazenamento lógico
+contido pelo host.</description>
+                            <preprocessing>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <parameters>
+                                        <parameter>{#ALLOC_UNITS}</parameter>
+                                    </parameters>
+                                </step>
+                            </preprocessing>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Sistema de arquivos {#FSNAME}</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>891dfd94e4f14ae9bded741194b2b18e</uuid>
+                            <name>{#FSNAME}: Espaço total</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.2.1.25.2.3.1.5.{#SNMPINDEX}</snmp_oid>
+                            <key>vfs.fs.total[hrStorageSize.{#SNMPINDEX}]</key>
+                            <units>B</units>
+                            <description>MIB: HOST-RESOURCES-MIB
+O tamanho do armazenamento representado por esta entrada, em unidades de hrStorageAllocationUnits.
+Este objeto é gravável para permitir a configuração remota do tamanho da área de armazenamento nos casos em que tal operação faz sentido e é possível no sistema subjacente.
+Por exemplo, a quantidade de armazenamento principal alocada para um buffer pool pode ser modificada ou a quantidade de espaço em disco alocada para armazenamento virtual pode ser modificada.</description>
+                            <preprocessing>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <parameters>
+                                        <parameter>{#ALLOC_UNITS}</parameter>
+                                    </parameters>
+                                </step>
+                            </preprocessing>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Sistema de arquivos {#FSNAME}</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>7381a92de3104029b0c195529cdf5de5</uuid>
+                            <name>{#FSNAME}: Espaço utilizado</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.2.1.25.2.3.1.6.{#SNMPINDEX}</snmp_oid>
+                            <key>vfs.fs.used[hrStorageUsed.{#SNMPINDEX}]</key>
+                            <units>B</units>
+                            <description>MIB: HOST-RESOURCES-MIB
+A quantidade de armazenamento representada por esta entrada que é alocada, em unidades de hrStorageAllocationUnits.</description>
+                            <preprocessing>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <parameters>
+                                        <parameter>{#ALLOC_UNITS}</parameter>
+                                    </parameters>
+                                </step>
+                            </preprocessing>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Sistema de arquivos {#FSNAME}</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <uuid>e8d2567c314a4d8383eef644b84193bb</uuid>
+                            <expression>last(/VMware SNMP ESXi/vfs.fs.pused[storageUsedPercentage.{#SNMPINDEX}])&gt;{$VFS.FS.PUSED.MAX.CRIT:&quot;{#FSNAME}&quot;} and
+((last(/VMware SNMP ESXi/vfs.fs.total[hrStorageSize.{#SNMPINDEX}])-last(/VMware SNMP ESXi/vfs.fs.used[hrStorageUsed.{#SNMPINDEX}]))&lt;5G or timeleft(/VMware SNMP ESXi/vfs.fs.pused[storageUsedPercentage.{#SNMPINDEX}],1h,100)&lt;1d)</expression>
+                            <name>{#FSNAME}: O espaço em disco está criticamente baixo (Utilizado &gt; {$VFS.FS.PUSED.MAX.CRIT:&quot;{#FSNAME}&quot;}%)</name>
+                            <opdata>Espaço utilizado: {ITEM.LASTVALUE3} of {ITEM.LASTVALUE2} ({ITEM.LASTVALUE1})</opdata>
+                            <priority>AVERAGE</priority>
+                            <description>Duas condições devem corresponder: primeiro, a utilização do espaço deve estar acima de {$ VFS.FS.PUSED.MAX.CRIT: &quot;{# FSNAME}&quot;}.
+  A segunda condição deve ser uma das seguintes:
+  - O espaço livre em disco é inferior a 5G.
+  - O disco ficará cheio em menos de 24 horas.</description>
+                            <manual_close>YES</manual_close>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Sistema de Arquivos</value>
+                                </tag>
+                            </tags>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <uuid>899780f5b2ef4e47b1297ae182063166</uuid>
+                            <expression>last(/VMware SNMP ESXi/vfs.fs.pused[storageUsedPercentage.{#SNMPINDEX}])&gt;{$VFS.FS.PUSED.MAX.WARN:&quot;{#FSNAME}&quot;} and
+((last(/VMware SNMP ESXi/vfs.fs.total[hrStorageSize.{#SNMPINDEX}])-last(/VMware SNMP ESXi/vfs.fs.used[hrStorageUsed.{#SNMPINDEX}]))&lt;10G or timeleft(/VMware SNMP ESXi/vfs.fs.pused[storageUsedPercentage.{#SNMPINDEX}],1h,100)&lt;1d)</expression>
+                            <name>{#FSNAME}: Pouco espaço em disco (Utilizado &gt; {$VFS.FS.PUSED.MAX.WARN:&quot;{#FSNAME}&quot;}%)</name>
+                            <opdata>Espaço utilizado: {ITEM.LASTVALUE3} of {ITEM.LASTVALUE2} ({ITEM.LASTVALUE1})</opdata>
+                            <priority>WARNING</priority>
+                            <description>Duas condições devem corresponder: primeiro, a utilização do espaço deve estar acima de {$ VFS.FS.PUSED.MAX.WARN: &quot;{# FSNAME}&quot;}.
+  A segunda condição deve ser uma das seguintes:
+  - O espaço livre em disco é inferior a 10G.
+  - O disco ficará cheio em menos de 24 horas.</description>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Sistema de Arquivos</value>
+                                </tag>
+                            </tags>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <uuid>dc6307d265c44b81b19561f0c7f7b63d</uuid>
+                            <name>{#FSNAME}: Uso de espaço em disco</name>
+                            <width>600</width>
+                            <height>340</height>
+                            <yaxismax>0</yaxismax>
+                            <show_work_period>NO</show_work_period>
+                            <show_triggers>NO</show_triggers>
+                            <type>PIE</type>
+                            <show_3d>YES</show_3d>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>00FFBF</color>
+                                    <calc_fnc>LAST</calc_fnc>
+                                    <type>GRAPH_SUM</type>
+                                    <item>
+                                        <host>VMware SNMP ESXi</host>
+                                        <key>vfs.fs.total[hrStorageSize.{#SNMPINDEX}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>2</sortorder>
+                                    <color>F63100</color>
+                                    <calc_fnc>LAST</calc_fnc>
+                                    <item>
+                                        <host>VMware SNMP ESXi</host>
+                                        <key>vfs.fs.used[hrStorageUsed.{#SNMPINDEX}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                </discovery_rule>
+                <discovery_rule>
+                    <uuid>a9719c2aaffa4b4380b417fe7497050b</uuid>
+                    <name>Adaptador de Armazenamento</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>discovery[{#VMHBAINDEX},1.3.6.1.4.1.6876.3.5.2.1.1,{#VMHBADNAME},1.3.6.1.4.1.6876.3.5.2.1.2,{#VMHBABUS},1.3.6.1.4.1.6876.3.5.2.1.3,{#VMHBASTATUS},1.3.6.1.4.1.6876.3.5.2.1.4,{#VMHBAMODEL},1.3.6.1.4.1.6876.3.5.2.1.5,{#VMHBADRIVER},1.3.6.1.4.1.6876.3.5.2.1.6,{#VMHBAPCI},1.3.6.1.4.1.6876.3.5.2.1.7]</snmp_oid>
+                    <key>vmwStorage</key>
+                    <filter>
+                        <evaltype>AND</evaltype>
+                        <conditions>
+                            <condition>
+                                <macro>{#VMHBAINDEX}</macro>
+                                <value>{$VM.VMHBAINDEX.MATCHES}</value>
+                                <formulaid>D</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#VMHBADNAME}</macro>
+                                <value>{$VM.VMHBADNAME.MATCHES}</value>
+                                <formulaid>B</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#VMHBABUS}</macro>
+                                <value>{$VM.VMHBABUS.MATCHES}</value>
+                                <formulaid>A</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#VMHBASTATUS}</macro>
+                                <value>{$VM.VMHBASTATUS.MATCHES}</value>
+                                <formulaid>G</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#VMHBAMODEL}</macro>
+                                <value>{$VM.VMHBAMODEL.MATCHES}</value>
+                                <formulaid>E</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#VMHBADRIVER}</macro>
+                                <value>{$VM.VMHBADRIVER.MATCHES}</value>
+                                <formulaid>C</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#VMHBAPCI}</macro>
+                                <value>{$VM.VMHBAPCI.MATCHES}</value>
+                                <formulaid>F</formulaid>
+                            </condition>
+                        </conditions>
+                    </filter>
+                    <description>Os adaptadores de armazenamento fornecem conectividade para seu host ESXi a uma unidade de armazenamento ou rede específica.
+
+ESXi oferece suporte a diferentes classes de adaptadores, incluindo SCSI, iSCSI, RAID, Fibre Channel, Fibre Channel over Ethernet (FCoE) e Ethernet. O ESXi acessa os adaptadores diretamente por meio de drivers de dispositivo no VMkernel.
+
+Dependendo do tipo de armazenamento que você usa, pode ser necessário habilitar e configurar um adaptador de armazenamento em seu host.</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <uuid>627a3970a6c74f5d9dd98c88904e1ae5</uuid>
+                            <name>{#VMHBADNAME}: Número do Barramento</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>.1.3.6.1.4.1.6876.3.5.2.1.3.{#SNMPINDEX}</snmp_oid>
+                            <key>vmwHbaBusNumber.[{#SNMPINDEX}]</key>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <description>O número do barramento do host. Para relatórios HBA não suportados</description>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Adaptador de Armazenamento</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>e7fe2aeb255948ecbd5ebf48153edbd7</uuid>
+                            <name>{#VMHBADNAME}: Nome do Dispositivo</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>.1.3.6.1.4.1.6876.3.5.2.1.2.{#SNMPINDEX}</snmp_oid>
+                            <key>vmwHbaDeviceName.[{#SNMPINDEX}]</key>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <description>O nome do dispositivo do sistema para este adaptador de barramento de host.</description>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Adaptador de Armazenamento</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>e8ad2d8842484d0dbc216cb59caad2ca</uuid>
+                            <name>{#VMHBADNAME}: Driver</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>.1.3.6.1.4.1.6876.3.5.2.1.6.{#SNMPINDEX}</snmp_oid>
+                            <key>vmwHbaDriverName.[{#SNMPINDEX}]</key>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <description>Nome do Driver.</description>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Adaptador de Armazenamento</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>0b7241eb8e8443a1ac9ea95241d8dca6</uuid>
+                            <name>{#VMHBADNAME}: Nome do Modelo</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>.1.3.6.1.4.1.6876.3.5.2.1.5.{#SNMPINDEX}</snmp_oid>
+                            <key>vmwHbaModelName.[{#SNMPINDEX}]</key>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <description>O nome do modelo do adaptador de barramento do host.</description>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Adaptador de Armazenamento</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>51a1d4c6fa724c5c8e13670e6c710952</uuid>
+                            <name>{#VMHBADNAME}: Interface PCI</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>.1.3.6.1.4.1.6876.3.5.2.1.7.{#SNMPINDEX}</snmp_oid>
+                            <key>vmwHbaPci.[{#SNMPINDEX}]</key>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <description>O ID de interface de conexão periférica (PCI) do dispositivo</description>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Adaptador de Armazenamento</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>2d053cb5a844424bbfc95c0277b26d45</uuid>
+                            <name>{#VMHBADNAME}: Status do Adaptador</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>.1.3.6.1.4.1.6876.3.5.2.1.4.{#SNMPINDEX}</snmp_oid>
+                            <key>vmwHbaStatus.[{#SNMPINDEX}]</key>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <description>O status operacional do adaptador.</description>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Adaptador de Armazenamento</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                    </item_prototypes>
+                </discovery_rule>
+                <discovery_rule>
+                    <uuid>a4689f6684124e75b3aa8cb7170ff15a</uuid>
+                    <name>Descoberta das VM</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>discovery[{#VMNAME},1.3.6.1.4.1.6876.2.1.1.2,{#VMLOCAL},1.3.6.1.4.1.6876.2.1.1.3,{#VMSO},1.3.6.1.4.1.6876.2.1.1.4,{#VMMEM},1.3.6.1.4.1.6876.2.1.1.5,{#VMPOWER},1.3.6.1.4.1.6876.2.1.1.6,{#VMSTATE},1.3.6.1.4.1.6876.2.1.1.8,{#VMCPU},1.3.6.1.4.1.6876.2.1.1.9,{#VMID},1.3.6.1.4.1.6876.2.1.1.10]</snmp_oid>
+                    <key>vmwVmEntry</key>
+                    <filter>
+                        <evaltype>AND</evaltype>
+                        <conditions>
+                            <condition>
+                                <macro>{#VMNAME}</macro>
+                                <value>{$VM.VMNAME.MATCHES}</value>
+                                <formulaid>E</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#VMLOCAL}</macro>
+                                <value>{$VM.VMLOCAL.MATCHES}</value>
+                                <formulaid>C</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#VMMEM}</macro>
+                                <value>{$VM.VMMEM.MATCHES}</value>
+                                <formulaid>D</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#VMPOWER}</macro>
+                                <value>{$VM.VMPOWER.MATCHES}</value>
+                                <formulaid>F</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#VMSTATE}</macro>
+                                <value>{$VM.VMSTATE.MATCHES}</value>
+                                <formulaid>G</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#VMCPU}</macro>
+                                <value>{$VM.VMCPU.MATCHES}</value>
+                                <formulaid>A</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#VMID}</macro>
+                                <value>{$VM.VMID.MATCHES}</value>
+                                <formulaid>B</formulaid>
+                            </condition>
+                        </conditions>
+                    </filter>
+                    <item_prototypes>
+                        <item_prototype>
+                            <uuid>e09045df3c2f49dbb8db9bdba275a7ee</uuid>
+                            <name>{#VMNAME}: Máquina Virtual - CPU</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.6876.2.1.1.9.{#SNMPINDEX}</snmp_oid>
+                            <key>vmwVmCpus.[{#SNMPINDEX}]</key>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <description>Número de CPUs virtuais atribuídas a esta máquina virtual.
+Propriedade VIM: numCPU.</description>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Máquinas Virtuais</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>651510be275c471fa6649822b72d9fb5</uuid>
+                            <name>{#VMNAME}: Máquina Virtual - Nome</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.6876.2.1.1.2.{#SNMPINDEX}</snmp_oid>
+                            <key>vmwVmDisplayName.[{#SNMPINDEX}]</key>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <description>Nome pelo qual esta Máquina Virtual é exibido. Não é garantido que seja único.</description>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Máquinas Virtuais</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>77247846970148418d3b162af1ebd977</uuid>
+                            <name>{#VMNAME}: Máquina Virtual - Sistema Operacional</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>.1.3.6.1.4.1.6876.2.1.1.4.{#SNMPINDEX}</snmp_oid>
+                            <key>vmwVMGuestOS.[{#SNMPINDEX}]</key>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <description>Sistema operacional em execução nesta Máquina Virutal. Este valor corresponde ao valor especificado ao criar a VM e a menos que seja definido corretamente.</description>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Máquinas Virtuais</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>f1fd31a10c054ae0a03390bc72d0ca0c</uuid>
+                            <name>{#VMNAME}: Máquina Virtual - Modo de operação</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.6876.2.1.1.8.{#SNMPINDEX}</snmp_oid>
+                            <key>vmwVmGuestState.[{#SNMPINDEX}]</key>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <description>Modo de operação do sistema operacional convidado. Os valores incluem:
+running - A máquina virtual está funcionando normalmente.
+not running - A máquina virtual não está executando.</description>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Máquinas Virtuais</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>c89f5328335c40209b6bd22c88e91070</uuid>
+                            <name>{#VMNAME}: Máquina Virtual - RAM</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.6876.2.1.1.5.{#SNMPINDEX}</snmp_oid>
+                            <key>vmwVmMemSize.[{#SNMPINDEX}]</key>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <description>Memória configurada para esta máquina virtual.
+Memória&gt; MAX Integer32 é relatado como máximo integer32.</description>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Máquinas Virtuais</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>895d36fbf2d64d35b5525e05f96f06a1</uuid>
+                            <name>{#VMNAME}: Máquina Virtual - Estado de energia</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.6876.2.1.1.6.{#SNMPINDEX}</snmp_oid>
+                            <key>vmwVmState.[{#SNMPINDEX}]</key>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <description>Modo de operação do sistema operacional convidado. Os valores incluem:
+power on - A máquina virtual está ligada.
+power off - A máquina virtual está desligada.</description>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Máquinas Virtuais</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>6d047a4ee9eb4d5a8cd2e26bef647e46</uuid>
+                            <name>{#VMNAME}: Máquina Virtual - ID</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.6876.2.1.1.10.{#SNMPINDEX}</snmp_oid>
+                            <key>vmwVmUUID.[{#SNMPINDEX}]</key>
+                            <trends>0</trends>
+                            <value_type>TEXT</value_type>
+                            <description>Um identificador exclusivo para esta VM. Deve ser único em um conjunto de sistemas ESX. Gerenciado por uma instância do vSphere Center.</description>
+                            <tags>
+                                <tag>
+                                    <tag>Aplicação</tag>
+                                    <value>Máquinas Virtuais</value>
+                                </tag>
+                            </tags>
+                        </item_prototype>
+                    </item_prototypes>
+                </discovery_rule>
+            </discovery_rules>
+            <macros>
+                <macro>
+                    <macro>{$SSH_IP}</macro>
+                    <value>ip</value>
+                    <description>IP SSH</description>
+                </macro>
+                <macro>
+                    <macro>{$SSH_PASS}</macro>
+                    <value>password</value>
+                    <description>Senha SSH</description>
+                </macro>
+                <macro>
+                    <macro>{$SSH_PORT}</macro>
+                    <value>port</value>
+                    <description>Porta SSH</description>
+                </macro>
+                <macro>
+                    <macro>{$SSH_USER}</macro>
+                    <value>user</value>
+                    <description>Usuário SSH</description>
+                </macro>
+            </macros>
+        </template>
+    </templates>
+</zabbix_export>
