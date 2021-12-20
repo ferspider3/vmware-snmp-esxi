@@ -35,7 +35,7 @@ ESXi:
 https://docs.vmware.com/br/VMware-vSphere/7.0/com.vmware.vsphere.monitoring.doc/GUID-8EF36D7D-59B6-4C74-B1AA-4A9D18AB6250.html
 ```
 
-## ☕ Usando <nome_do_projeto>
+## ☕ Configurações
 
 Para usar o template, siga estas etapas:
 
