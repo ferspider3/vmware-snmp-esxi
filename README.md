@@ -1,4 +1,4 @@
-# VMware SNMP ESXi
+# VMware SNMP ESXi 5.1
 
 <img src="https://assets.zabbix.com/img/tmp/logo/logo_bad_example.png" alt="logo">
 
